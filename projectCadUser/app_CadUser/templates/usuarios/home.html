@@ -1,0 +1,16 @@
+{% extends 'usuarios/base.html'%}
+{% block PageContent%}
+  <form action="{% url 'list_users'%}" method="post">
+    {% csrf_token %}
+      <div>
+          <h1>Cadastro de Usuarios do Cicero Dias</h1>
+          <div style="text-align: center; display: flex; flex-direction: column;" class="container">
+              Nome<input name="user_name" class="form-control-sm" type="text">
+              Email<input name="user_email" class="form-control-sm" type="email">
+              Ano de Nascimento<input name="user_birth_year" class="form-control-sm" type="text">
+              Curso<input name="user_course" class="form-control-sm" type="text">
+              <Button style="margin-top: 12px;" class="form-control-sm">Enviar</Button>
+          </div>
+      </div>
+  </form>
+{% endblock %}
